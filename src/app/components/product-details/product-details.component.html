@@ -25,10 +25,12 @@
 
         <owl-carousel-o [options]="customOptions">
 
-          <ng-container *ngFor="let p of productDetails |async">
-            <ng-template carouselSlide [id]="p.seq"  >
-              <img [src]="path + p.fileId" [alt]="" >
+          <ng-container *ngFor="let p of productDetails|async ">
+          <ng-container *ngFor="let p1 of p.files ">
+            <ng-template carouselSlide [id]="p1.id"  >
+              <img [src]="p1.url" [alt]="" >
             </ng-template>
+          </ng-container>
           </ng-container>
         </owl-carousel-o>
 
@@ -37,11 +39,11 @@
 
       </div>
 
-      <div class="portfolio-description" *ngFor="let p of productDetails |async">
+      <div class="portfolio-description" *ngFor="let p of productDetails |async" style="color: #5f3b6d">
         <h2>{{p.type}} - Rs: {{p.price}}</h2>
         <p>{{p.desc}}</p>
-       <b><a href="{{whatsappApi}}{{p|json}}" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>
-         Get this product</a></b>
+       <b><a style="color: #5f3b6d" href="{{whatsappApi}}{{p|json}}" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>
+         Buy this product</a></b>
       </div>
 
 
