@@ -12,20 +12,26 @@ import {ProductsListComponent} from './components/products-list/products-list.co
 import {ProductDetailsComponent} from './components/product-details/product-details.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import {FormsModule} from '@angular/forms';
+import { AngularFireStorageModule} from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductAddComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserModule,
     BrowserAnimationsModule,
     CarouselModule,
+    FormsModule,
     RouterModule.forRoot(routesConfig,{useHash:false})
 
   ],

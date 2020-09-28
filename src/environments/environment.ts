@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  collectionPath : 'anamtrends',
+  tableName : 'products',
   firebase: {
     apiKey: "AIzaSyAUxB31PAaKQrJjjJvha4EMsLDYDPB4z_E",
     authDomain: "anamtrends-d56c9.firebaseapp.com",

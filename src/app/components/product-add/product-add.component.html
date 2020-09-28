@@ -1,0 +1,61 @@
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Add New Product</li>
+      </ol>
+
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <section>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Brand</label>
+              <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="product.brand" placeholder="Enter Brand Name">
+            </div>
+            <div class="col-md-4">
+              <label>Price</label>
+              <input type="text" class="form-control"  [ngModelOptions]="{standalone: true}" [(ngModel)]="product.price"  placeholder="Enter Price">
+            </div>
+
+
+            <div class="col-md-4">
+              <label>Type</label>
+              <select class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="product.type">
+                <option>UN-STICHED</option>
+                <option>SEMI-STICHED</option>
+                <option>READY-MADE</option>
+              </select>
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-md-10">
+              <label>Description</label>
+              <textarea type="text" class="form-control"  [ngModelOptions]="{standalone: true}" [(ngModel)]="product.desc" placeholder="Enter Description"> </textarea>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label >Images</label>
+            <input type="file" class="form-control-file" accept="image/*"  multiple  (change)="selectedFiles($event)" >
+          </div>
+
+        </div>
+
+        <button   class="btn btn-primary pull-right" (click)="save()" [disabled]="disableButton || product.brand == undefined || product.price == undefined || product.desc == null ||  product.type == null ">Save</button>
+      </form>
+    </div>
+  </section>
+
+</main>

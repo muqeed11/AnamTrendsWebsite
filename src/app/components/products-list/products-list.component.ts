@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
  import {ActivatedRoute, Router} from '@angular/router';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-products-list',
@@ -16,12 +17,16 @@ export class ProductsListComponent implements OnInit {
               private router: Router,){
 
   }
-
+  TableName= environment.tableName;
   ngOnInit() {
     this.getProducts()
   }
   getProducts() {
-    this.items = this.af.list('products').valueChanges();
+    this.items = this.af.list(this.TableName).valueChanges();
+
+    this.items.subscribe(s=>{
+      console.log(s)
+    })
 
   }
 }
