@@ -15,13 +15,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import {FormsModule} from '@angular/forms';
 import { AngularFireStorageModule} from '@angular/fire/storage';
+import { ProductModifyComponent } from './components/product-modify/product-modify.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
     ProductDetailsComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    ProductModifyComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
